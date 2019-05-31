@@ -14,9 +14,13 @@
 #define UNDO_DELAY_REACTION_DEF
 #endif
 
+//Briggs-Rauscher radical reaction to synthesize HIO and initialize concentrations
 REACTION(radical) 
+////Briggs-Rauscher radical reaction to convert HIO to I 
 REACTION(non_radical)
+//Reaction to balance out excess HIO created
 REACTION(hio_decay)
+//Reaction to balance out excess I created	
 REACTION(i_decay)
 
 #ifdef UNDO_DELAY_REACTION_DEF

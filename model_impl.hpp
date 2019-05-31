@@ -31,25 +31,29 @@ Refer to the Context API (Section ) for instructions on how to get delays
    and critical values for more complex reaction rate functions.
 
 */
+
+//Declare the rate of radical reaction to be constant written in param_set.csv
 template<>
 template<class Ctxt>
 RATETYPE reaction<radical>::active_rate(const Ctxt& c) {
     return c.getRate(radical);
 }
 
+//Declare the rate of the non-radical reaction to be a constant written in param_set.csv times current concentration of I times the current concentration of HIO
 template<>
 template<class Ctxt>
 RATETYPE reaction<non_radical>::active_rate(const Ctxt& c) {
     return c.getRate(non_radical)*(c.getCon(I)+1)*(c.getCon(HIO));
 }
 
-
+//Declare the rate of HIO decay reaction to be a constant written in param_set.csv times the current concentration of HIO
 template<>
 template<class Ctxt>
 RATETYPE reaction<hio_decay>::active_rate(const Ctxt& c) {
     return c.getRate(hio_decay)*c.getCon(HIO);
 }
 
+//Declare the rate of I decay reaction to be a constant written in param_set.csv times the current concentration of I 
 template<>
 template<class Ctxt>
 RATETYPE reaction<i_decay>::active_rate(const Ctxt& c) {

@@ -14,6 +14,7 @@
 #define UNDO_CRITICAL_SPECIE_DEF
 #endif
 
+//Species relevant to the model(HIO and I)
 SPECIE(HIO)
 SPECIE(I)
 
